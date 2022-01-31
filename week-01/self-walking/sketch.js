@@ -14,8 +14,6 @@ function setup() {
 
 function draw() {
     function drawVertex(count, radius, margin, offset) {
-
-
         //Create grid of grid
         for (let j = 0; j < count; j++) {
             push();
