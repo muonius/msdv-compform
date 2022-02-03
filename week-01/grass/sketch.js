@@ -41,7 +41,7 @@ function drawGrass(left, top, width, height) {
             random(0, height * 3),
             random(0, height * 10)
         );
-        bladeHeight = random(0, height);
+        // bladeHeight = random(0, height);
         // console.log(bladeHeight)
 
         // horizontal offset of top of blade relative to base
@@ -62,9 +62,9 @@ function drawGrass(left, top, width, height) {
 
 
             const palette = {
-                colorR: random(0, 150),
-                colorG: random(150, 255),
-                colorB: random(0, 20)
+                colorR: 0,
+                colorG: random(0, 255),
+                colorB: 0
             }
 
             stroke(palette.colorR, palette.colorG, palette.colorB);
@@ -83,6 +83,10 @@ function drawGrass(left, top, width, height) {
             stroke(palette.colorR, palette.colorG, palette.colorB);
 
         }
+
+        //conditional color based on height
+        //stroke(0,bladeHeight,0) color by height
+        //stroke(0,map(bladeHeight, 0,200,0,255),0)
 
     }
 }
