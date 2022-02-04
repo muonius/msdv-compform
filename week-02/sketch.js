@@ -1,4 +1,4 @@
-// require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
+//require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
 
 //Declare all variables 
 // const pane = new Tweakpane.Pane();
@@ -85,7 +85,6 @@ function drawLine(count) {
             pop();
         }
     }
-
 }
 
 
