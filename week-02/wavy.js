@@ -2,9 +2,6 @@
 // require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
 
 
-// require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
-
-
 const inc = 0.1;
 const scale = 2;
 const scale2 = 2;
