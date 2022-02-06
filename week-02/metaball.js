@@ -1,3 +1,4 @@
+//require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
 
 let particles = [];
 
@@ -47,6 +48,7 @@ class Particle {
 function setup() {
     createCanvas(600, 400);
     pixelDensity(1);
+    // blendMode(MULTIPLY);
     // noLoop();
     for (let i = 0; i < 20; i++) {
         particles[i] = new Particle();
