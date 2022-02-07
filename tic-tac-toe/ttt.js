@@ -41,3 +41,10 @@ function draw() {
     }
 
 }
+
+//create player 1
+//create player 2
+//create random player first step
+//create next step
+//create available option array
+//create end of game
