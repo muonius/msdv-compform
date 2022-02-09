@@ -36,9 +36,14 @@ function draw() {
             arc(x + 10, height * 0.9 - buildingHeight - 6, 9, 9, PI, TWO_PI);
         }
         // ellipse(x + 10, height * 0.9 - buildingHeight - 5, 10)
-
     }
 
     fill(150);
     rect(0, height * 0.9, width, height * 0.5);
 }
+
+
+// if (noise(x) < .5) { // add towers randomly
+//     if (noise(x * .005) < .4) { // add noise in clumps (effect easier to see if you don't always use the same noise seed)
+//     if (noise(x * frequency) > .5) { // add towers to tall buildings
+//     if (noise(x * frequency) < .3) { // add towers to short buildings

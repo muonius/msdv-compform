@@ -14,6 +14,7 @@ class Mover {
     update() {
         this.acc = p5.Vector.random2D();
         // this.acc.setMag(0.1);
+        //try perlin noise
         this.vel.add(this.acc);
         this.vel.limit(2);
         this.pos.add(this.vel);
