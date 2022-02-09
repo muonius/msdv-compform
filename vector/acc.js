@@ -18,16 +18,19 @@ class Mover {
         this.vel.add(this.acc);
         this.vel.limit(2);
         this.pos.add(this.vel);
-
     }
 
-    show() {
 
+
+
+    show() {
         stroke(0);
         strokeWeight(2);
         fill(255, 100)
         ellipse(this.pos.x, this.pos.y, 22, 22)
     }
+
+
 
 }
 
