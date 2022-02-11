@@ -25,7 +25,7 @@ function draw() {
 
         for (let x = 1; x <= cols; x++) {
             n = noise(x * 0.001, yoff, zoff);
-            xoff += n * 10 - 3;
+            xoff += n * 9 - 3;
             // push();
             stroke(255);
             strokeWeight(xoff * 0.02);
