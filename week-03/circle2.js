@@ -32,15 +32,11 @@ function circle_3() {
         let y1 = centerY + cos(a1) * radius;
         let y2 = centerY + cos(a2) * radius;
 
-        x1 += (noise(a1 * 1)) * 100;
-        y1 += (noise(a1 * 2)) * 100;
-        x2 += (noise(a2 * 1)) * 100;
-        y2 += (noise(a2 * 2)) * 100;
 
-        // x1 += (noise(a1, 1, frameCount * 0.1) - 0.5) * 150;
-        // y1 += (noise(a1, 2, frameCount * 0.1) - 0.5) * 150;
-        // x2 += (noise(a2, 1, frameCount * 0.1) - 0.5) * 150;
-        // y2 += (noise(a2, 2, frameCount * 0.1) - 0.5) * 150;
+        x1 += (noise(a1, 1, frameCount * 0.1) - 0.5) * 150;
+        y1 += (noise(a1, 2, frameCount * 0.1) - 0.5) * 150;
+        x2 += (noise(a2, 1, frameCount * 0.1) - 0.5) * 150;
+        y2 += (noise(a2, 2, frameCount * 0.1) - 0.5) * 150;
 
         line(x1, y1, x2, y2);
     }
