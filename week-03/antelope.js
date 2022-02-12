@@ -16,18 +16,15 @@ function setup() {
 function draw() {
     background(25);
     noStroke();
-
-
-
     translate(width / 2, height / 2);
     stroke(255);
     noFill();
     for (let i = 0; i < 800; i++) {
         beginShape();
 
-        if (roff >= width) roff = 0
+        if (roff >= width) roff -= width;
         for (let a = 0; a < TWO_PI; a += radians(1)) {
-            strokeWeight(random(10) / 10);
+            strokeWeight(random(10) / 20);
             // strokeWeight((random(6) / 10, random(5) / 10, random(3, 12) / 10) / 3);
             //perlin noise +1 to keep all positive values
             // let xoff = cos(a) + 1;
@@ -49,6 +46,6 @@ function draw() {
         zoff += 0.01;
         roff += noise(zoff * 200, 5);
     }
-    noLoop();
+    // noLoop();
 }
 
