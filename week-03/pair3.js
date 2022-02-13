@@ -12,6 +12,7 @@ function setup() {
     cols = floor(width / scale);
     rows = floor(height / scale);
     angleMode(DEGREES);
+    noiseSeed(25);
 }
 
 function draw() {
