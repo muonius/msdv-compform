@@ -6,13 +6,14 @@ const inc = 0.01;
 const scale = 10;
 let cols, rows;
 let zoff = 0;
+const seedLoop = [29, 36, 41, 44, 54, 55, 62, 63, 70, 72]
 
 function setup() {
     createCanvas(600, 600);
     cols = floor(width / scale);
     rows = floor(height / scale);
     angleMode(DEGREES);
-    noiseSeed(25);
+    noiseSeed(random(seedLoop));
 }
 
 function draw() {
@@ -39,7 +40,7 @@ function draw() {
             line(x1, y1, x2, y2);
             line(y2, x2, y1, x1); //square effect
             xoff += inc;
-            pop();
+            // pop();
 
         }
         yoff += inc;

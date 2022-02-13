@@ -34,8 +34,7 @@ function draw() {
 
 
         fill(220, 50, 50)
-        // strokeWeight(inc)
-        // vertex(x, y)
+
         curveVertex(x, y)
 
 
