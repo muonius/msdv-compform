@@ -6,11 +6,12 @@
 
 let countSlider, crazyMode, easingSlider;
 
-let count = 50;
-let inc = 10;
-let angle = 0;
+// let count = 50;
+// let inc = 10;
+// let angle = 0;
 const aDelay = 1 / 120;
 const loopDuration = 60 * 8;
+//I intended to include different easing effect into a slider but decided not to complicate things
 // const easingArray = [easeInOutCubic, easeInOutQuad, easeInOutQuint]
 
 function setup() {
