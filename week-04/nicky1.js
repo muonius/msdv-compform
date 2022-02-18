@@ -4,7 +4,7 @@ let cnv
 let val = 2
 
 function preload() {
-    img = loadImage('./assets/trump.jpeg');
+    img = loadImage('https://raw.githubusercontent.com/muonius/msdv-compform/master/week-04/assets/trump.jpeg');
 }
 
 function setup() {
