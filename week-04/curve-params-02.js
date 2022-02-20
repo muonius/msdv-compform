@@ -1,6 +1,5 @@
+// require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
 let scaleSlider, a1Slider, a2Slider, a3Slider, opSliderX, opSliderY;
-
-let operations = ["*", "+", "-"]
 
 function setup() {
     createCanvas(600, 600)
