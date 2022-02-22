@@ -1,3 +1,5 @@
+// require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
+// require https://cdn.jsdelivr.net/npm/tweakpane@1.5.9/dist/tweakpane.min.js
 let t;
 let pixelMap = [];
 let noiseScale = 0.001;
@@ -31,8 +33,7 @@ pane.addInput(params, "blueNoiseEnd", { min: 0, max: 12, step: 0.01 });
 pane.addInput(params, "blueBeg", { min: 0, max: 255, step: 1 });
 pane.addInput(params, "blueEnd", { min: 0, max: 255, step: 1 });
 
-// require https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js
-// require https://cdn.jsdelivr.net/npm/tweakpane@1.5.9/dist/tweakpane.min.js
+
 
 function setup() {
 

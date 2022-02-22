@@ -88,7 +88,7 @@ function drawMap() {
         }
     }
     updatePixels();
-    console.log(params)
+    // console.log(params)
 
     // console.log(pixelMap[0][0])
     //prints 0:0, 1: 141, 2:196, 3:255
