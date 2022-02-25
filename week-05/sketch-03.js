@@ -35,24 +35,26 @@ function draw() {
     let frequency = freq_slider.value() / 100;
     let speed = speed_slider.value() / 1000;
 
-    noiseDetail(5, 0.5);
+    noiseDetail(8, 0.5);
 
     fill(255);
     noStroke();
 
     // study this loop. do you understand how the line of ellipses is created?
     for (i = 0; i < 1; i += 0.02) {
-        let x = lerp(startX, endX, i);
-        let y = lerp(startY, endY, i);
+
         let offsetX = 0;
         let offsetY = 0;
 
         // hint: drive offsetX and offsetY with noise() instead of random()
         let n;
-        n = noise(i * frequency)
+        n = noise(i * frequency, frameCount * speed)
 
-        offsetX += noise(i * frequency, frameCount * speed) * amplitude * 100 * i;
-        offsetY += noise(i * frequency, frameCount * speed) * amplitude * 100 * i;
+        offsetX += (n - 0.5) * amplitude * 100;
+        offsetY += (n - 0.5) * amplitude * 200;
+
+        let x = lerp(startX, endX, i);
+        let y = lerp(startY, endY, i);
 
         ellipse(x + offsetX, y + offsetY, 10, 10);
 
