@@ -1,11 +1,9 @@
 // require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 
-// Dot Challenge Starting Point
-
 //Observation & Strategies
-// 1. Noise high frequency displacement
+// 1. Noise high frequency placement
 //2. Color and size are correlated, greater hue, greater size
-//3. There are no red or orange in the hue, use HSB, exlcude red values
+//3. There are no red or orange in the hue, use HSB, exclude red values
 
 function setup() {
     createCanvas(400, 400);
