@@ -1,26 +1,29 @@
 // require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 
 // 1. Low amplitude, low frequency
-// 2. offset values change back and forword, negative and positive changes
+// 2. increment offset values
+// 3. offset changes back and forth between the bounds 
 
 let amplitude_slider;
 let freq_slider;
+let speed_slider;
 
 let startX = 50;
 let startY = 250;
 let endX = 450;
 let endY = 50;
-let inc = 1;
 
 function setup() {
     createCanvas(500, 300);
 
     createP("Frequency");
-    freq_slider = createSlider(0, 2000, 50);
+    freq_slider = createSlider(0, 3000, 50);
 
     createP("Amplitude");
     amplitude_slider = createSlider(0, 100, 50);
 
+    createP("Time Speed");
+    speed_slider = createSlider(0, 100, 50);
 
 }
 
@@ -30,6 +33,7 @@ function draw() {
 
     let amplitude = amplitude_slider.value() / 100;
     let frequency = freq_slider.value() / 100;
+    let speed = speed_slider.value() / 1000
 
     noiseDetail(5, 0.5);
 
@@ -47,8 +51,8 @@ function draw() {
         let n;
         n = noise(i * frequency)
 
-        offsetX += noise(i * frequency, 0.1) * amplitude * 100 * i;
-        offsetY += noise(i * frequency, 0.2) * amplitude * 100 * i;
+        offsetX += noise(i * frequency, frameCount * speed) * amplitude * 100 * i;
+        offsetY += noise(i * frequency, frameCount * speed) * amplitude * 100 * i;
 
         ellipse(x + offsetX, y + offsetY, 10, 10);
 
