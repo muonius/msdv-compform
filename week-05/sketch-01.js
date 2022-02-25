@@ -1,9 +1,11 @@
 // require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 
 // Dot Challenge Starting Point
+
+//Observation & Strategies
 // 1. Noise high frequency displacement
-//2. Random color
-//3. Random size
+//2. Color and size are correlated, greater hue, greater size
+//3. There are no red or orange in the hue, use HSB, exlcude red values
 
 function setup() {
     createCanvas(400, 400);
@@ -24,12 +26,12 @@ function draw() {
         let x = noise(i * noiseFrequency, 1) * width;
         let y = noise(i * noiseFrequency, 2) * height;
 
-        // the diameter shouldn't always be 10, it needs to vary
-        let diameter = random(6, 15);
+        //diameter grows by hue value, not random
+        let diameter = map(i, 0, 100, 8, 18)
 
-        // the colors also need to change
-        // what colorMode would be easiest to work with?
+        //map hue to i value
         let hue = map(i, 0, 99, 60, 320)
+
         fill(hue, 100, 100);
 
         ellipse(x, y, diameter, diameter);
