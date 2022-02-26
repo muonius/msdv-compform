@@ -3,6 +3,7 @@
 // 1. Low amplitude, low frequency
 // 2. increment offset values
 // 3. offset changes back and forth between the bounds 
+// 4. for 3 to happen, need to create negative noise value
 
 let amplitude_slider;
 let freq_slider;
@@ -17,13 +18,13 @@ function setup() {
     createCanvas(500, 300);
 
     createP("Frequency");
-    freq_slider = createSlider(0, 3000, 50);
+    freq_slider = createSlider(0, 5000, 50);
 
     createP("Amplitude");
     amplitude_slider = createSlider(0, 100, 50);
 
     createP("Time Speed");
-    speed_slider = createSlider(0, 100, 50);
+    speed_slider = createSlider(0, 50, 10);
 
 }
 
@@ -32,10 +33,10 @@ function draw() {
     ellipseMode(CENTER);
 
     let amplitude = amplitude_slider.value() / 100;
-    let frequency = freq_slider.value() / 100;
+    let frequency = freq_slider.value() / 1000;
     let speed = speed_slider.value() / 1000;
 
-    noiseDetail(8, 0.5);
+    noiseDetail(5, 0.5);
 
     fill(255);
     noStroke();
