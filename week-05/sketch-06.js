@@ -1,7 +1,9 @@
 
 let heads = [];
 let deckPos = 0;
-let size = 0.05
+let size = 0.1
+let spacing = 5;
+let space = 20;
 
 function preload() {
     for (i = 0; i < 10; i++) {
@@ -11,19 +13,17 @@ function preload() {
 }
 
 //Declare imageDeck function
-// function imageDeck() {
-//     let v = heads[deckPos];
-//     deckPos++;
-//     if (deckPos == heads.length) {
-//         heads = shuffle(heads);
-//         deckPos = 0;
-//     }
-//     return v;
-// }
+function imageDeck() {
+    deckPos++;
+    if (deckPos == heads.length) {
+        heads = shuffle(heads);
+        deckPos = 0;
+    }
+}
 
 function setup() {
     createCanvas(400, 400);
-
+    noiseDetail(2, 0.5)
 }
 
 function draw() {
@@ -32,23 +32,24 @@ function draw() {
     noStroke();
     ellipseMode(CENTER);
 
-    let noiseFrequency = 0.5;
+    let noiseFrequency = 0.01;
 
-    for (let j = 0; j < 60; j++) {
+    for (let j = 0; j < 30; j++) {
         // these points are not scattered in the same way
         // how can you make the arrangement match the challenge?
-        let x = noise(j * noiseFrequency, 0) * width;
-        let y = noise(j * noiseFrequency, 10) * height;
+        let x = noise(j * noiseFrequency + spacing, 0, size) * width;
+        let y = noise(j * noiseFrequency + spacing, 10, size) * height;
 
-        let m = j % heads.length + 1;
+        let m = heads.length;
 
         push();
         image(heads[j % m], x, y, heads[j % m].width * size, heads[j % m].height * size);
         pop();
 
-        size += 0.01;
-        console.log(m)
+        spacing += 0.5;
+        size += 0.005;
+        imageDeck();
     }
 
-    // noLoop();
+    noLoop();
 }
