@@ -18,10 +18,10 @@ function draw() {
             //5.change colorMode for horizontal gradient
             // let hue = map(y, 0, img.height, 0, 360)
             // let c = color(random(hue), 100, 100)
-
-            let d = dist(width / 2, height / 2, x, y)
+            //6. Make a radial gradient
+            let d = dist(width / 2, height / 2, x * 25, y * 25)
             console.log(d)
-            let c = color(d * 10 / 25, 0, 0)
+            let c = color(d, 0, 0)
 
             img.set(x, y, c);
         }
