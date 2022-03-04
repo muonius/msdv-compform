@@ -16,14 +16,14 @@ let nextGrid = [];
 // const k = 0.062
 // const t = 1;
 
-const dA = 1
+const dA = 0.7
 const dB = 0.2
-const feed = 0.075
+const feed = 0.055
 const k = 0.062
 const t = 1;
 
 function setup() {
-    createCanvas(400, 400)
+    createCanvas(200, 200)
     pixelDensity(1)
     for (let x = 0; x < width; x++) {
         grid[x] = [];
@@ -34,8 +34,8 @@ function setup() {
         }
     }
 
-    for (let i = 160; i < 240; i++) {
-        for (let j = 160; j < 240; j++)
+    for (let i = 90; i < 110; i++) {
+        for (let j = 90; j < 110; j++)
             grid[i][j].b = 1
     }
 }
