@@ -29,8 +29,8 @@ function draw() {
 
 function sortPixels() {
     // Get a random pixel.
-    const x = random(1, img.width);
-    const y = random(1, img.height - 1);
+    const x = random(0, img.width);
+    const y = random(0, img.height - 1);
 
     for (let i = 0; i <= n; i++) {
         colorArray.push(img.get(x, y + i));
