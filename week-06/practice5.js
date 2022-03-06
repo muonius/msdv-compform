@@ -2,7 +2,7 @@
 let worldImage;
 
 function preload() {
-  worldImage = loadImage("./assets/world_100.png");
+  worldImage = loadImage("./assets/Olivier.png");
 }
 
 function setup() {

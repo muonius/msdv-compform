@@ -4,7 +4,7 @@ let n;
 let frame = 0;
 
 function preload() {
-    testImage = loadImage("./assets/Birkin.png");
+    testImage = loadImage("https://raw.githubusercontent.com/muonius/msdv-compform/master/week-06/assets/Birkin.png");
     noLoop();
 }
 
@@ -17,15 +17,10 @@ function setup() {
 }
 
 function draw() {
-    // clear the background
     background(0, 0, 0);
-
-    // stroke(0, 200, 100, 80);
 
     testImage.loadPixels();
 
-
-    // loop over every x,y pixel coordinate in the image
     for (let x = 0; x < width; x++) {
         for (let y = 0; y < height; y++) {
             const pixelRed = getQuick(testImage, x, y)[0];
@@ -41,9 +36,7 @@ function draw() {
             }
             // frame += 0.01;
         }
-
     }
-
 
     // noLoop();
 }
