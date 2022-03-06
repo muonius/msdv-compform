@@ -3,13 +3,13 @@
 const dim = 400;
 var canvasImage;
 
-var pixelFactor = 45;
+var pixelFactor = 10;
 
 function preload() {
-    // canvasImage = loadImage("https://source.unsplash.com/random/" + dim + "x" + dim);
+    canvasImage = loadImage("https://raw.githubusercontent.com/muonius/msdv-compform/master/week-06/assets/mondrian.png");
     // canvasImage = loadImage("./assets/mondrian.png");
     // canvasImage = loadImage("./assets/mondrian2.png");
-    canvasImage = loadImage("./assets/mondrian3.png");
+    // canvasImage = loadImage("./assets/mondrian3.png");
 }
 
 function setup() {
