@@ -3,10 +3,13 @@
 const dim = 400;
 var canvasImage;
 
-var pixelFactor = 8;
+var pixelFactor = 45;
 
 function preload() {
-    canvasImage = loadImage("https://source.unsplash.com/random/" + dim + "x" + dim);
+    // canvasImage = loadImage("https://source.unsplash.com/random/" + dim + "x" + dim);
+    // canvasImage = loadImage("./assets/mondrian.png");
+    // canvasImage = loadImage("./assets/mondrian2.png");
+    canvasImage = loadImage("./assets/mondrian3.png");
 }
 
 function setup() {
@@ -27,17 +30,21 @@ function draw() {
         for (let i = 0; i < dim; i += pixelFactor) {
             let pixelIndex = (i + dim * j) * 4;
 
-            let pixelSum = canvasImage.pixels[pixelIndex + 0] +
-                canvasImage.pixels[pixelIndex + 1] +
-                canvasImage.pixels[pixelIndex + 2];
+            const r = 255 - canvasImage.pixels[pixelIndex + 0]
+            const g = 255 - canvasImage.pixels[pixelIndex + 1]
+            const b = 255 - canvasImage.pixels[pixelIndex + 2]
+            const a = canvasImage.pixels[pixelIndex + 3]
+
+            let distance = r + g + b
+
 
             push();
-            translate(i - dim / 2, j - dim / 2, pixelSum / 3);
+            translate(i - dim / 2, j - dim / 2, distance / 5);
             fill(
-                canvasImage.pixels[pixelIndex + 0],
-                canvasImage.pixels[pixelIndex + 1],
-                canvasImage.pixels[pixelIndex + 2],
-                canvasImage.pixels[pixelIndex + 3]
+                255 - r,
+                255 - g,
+                255 - b,
+                a
             );
             box(pixelFactor);
             pop();
