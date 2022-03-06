@@ -5,7 +5,7 @@ let colorArray = [];
 let totalArray = [];
 
 function preload() {
-    img = loadImage("./assets/Olivier.png");
+    img = loadImage("https://raw.githubusercontent.com/muonius/msdv-compform/master/week-06/assets/Olivier.png");
 }
 
 function setup() {
@@ -18,7 +18,7 @@ function setup() {
 function draw() {
     img.loadPixels();
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         sortPixels();
     }
 
