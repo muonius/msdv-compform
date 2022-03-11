@@ -33,3 +33,9 @@ comboPath.style = {
     shadowBlur: 12,
     shadowOffset: new Point(5, 5),
 };
+
+// path2 = path2.subtract(comboPath);
+path2.remove();
+path1.remove();
+
+console.log(comboPath)
