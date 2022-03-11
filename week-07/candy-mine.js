@@ -2,23 +2,21 @@ function Ball(r, p, v) {
     this.radius = r;
     this.point = p;
     this.vector = v;
-    //maxVec control the speed
-    this.maxVec = 6;
-    //
-    this.numSegment = Math.floor(r / 3 + 2);
-
+    //controls speed
+    this.maxVec = 4;
+    //controls number of segments. The Segment object represents the points of a path through which its Curve objects pass. 
+    this.numSegment = Math.floor(r / 10 + 10);
     this.boundOffset = [];
     this.boundOffsetBuff = [];
     this.sidePoints = [];
-
     this.path = new Path({
-        strokeColor: {
-            hue: Math.random() * 90 + 60,
-            saturation: 0.5,
-            brightness: 1
+        fillColor: {
+            hue: Math.random() > 0.6 ? 90 : 300,
+            saturation: 1,
+            brightness: Math.random() > 0.7 ? 0 : 1
         },
-        strokeWidth: 10,
-        blendMode: 'multiply'
+        strokeWidth: 2,
+        blendMode: 'lighter'
     });
 
     for (var i = 0; i < this.numSegment; i++) {
@@ -42,6 +40,7 @@ Ball.prototype = {
     },
 
     checkBorders: function () {
+        //view is similar to viewPort. Here size has two properties height and width
         var size = view.size;
         if (this.point.x < -this.radius)
             this.point.x = size.width + this.radius;
@@ -54,6 +53,7 @@ Ball.prototype = {
     },
 
     updateShape: function () {
+
         var segments = this.path.segments;
         for (var i = 0; i < this.numSegment; i++)
             segments[i].point = this.getSidePoint(i);
@@ -115,27 +115,30 @@ Ball.prototype = {
 
 //--------------------- main ---------------------
 
-//https://happycoding.io/tutorials/processing/collision-detection
-
 var balls = [];
-var numBalls = 20;
+var numBalls = 300;
 for (var i = 0; i < numBalls; i++) {
     var position = Point.random() * view.size;
     var vector = new Point({
         angle: 360 * Math.random(),
-        length: Math.random() * 10
+        length: Math.random() * 10 + 10
     });
-    var radius = Math.random() * 60 + 60;
+    var radius = Math.random() * 40 + 40;
     balls.push(new Ball(radius, position, vector));
 }
 
-function onFrame() {
-    for (var i = 0; i < balls.length - 1; i++) {
-        for (var j = i + 1; j < balls.length; j++) {
-            balls[i].react(balls[j]);
-        }
+
+
+// function onFrame() {
+
+// }
+
+
+for (var i = 0; i < balls.length - 1; i++) {
+    for (var j = i + 1; j < balls.length; j++) {
+        balls[i].react(balls[j]);
     }
-    for (var i = 0, l = balls.length; i < l; i++) {
-        balls[i].iterate();
-    }
+}
+for (var i = 0, l = balls.length; i < l; i++) {
+    balls[i].iterate();
 }
