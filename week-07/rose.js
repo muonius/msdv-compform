@@ -1,6 +1,6 @@
 
 var center = new Point(250, 250);
-var k = 7;
+var k = 20;
 var myPath = new Path();
 
 myPath.strokeColor = 'black';
@@ -8,8 +8,8 @@ myPath.moveTo(center)
 
 for (var a = 0; a < Math.PI; a += 0.01) {
     var r = 40 * Math.cos(k * a)
-    var x = r * Math.cos(a)
-    var y = r * Math.sin(a)
+    var x = r * Math.cos(a * 1)
+    var y = r * Math.sin(a * 1) + 2
     myPath.lineTo(new Point(center + [x, y]))
 }
 
