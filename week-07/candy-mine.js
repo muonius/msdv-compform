@@ -119,7 +119,7 @@ var balls = [];
 var numBalls = 20;
 
 for (var i = 0; i < numBalls; i++) {
-    var position = Point.random() * view.size;
+    var position = new Point.random() * view.size;
     var vector = new Point({
         angle: 360 * Math.random(),
         length: Math.random() * 10 + 10
