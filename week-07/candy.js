@@ -49,6 +49,7 @@ Ball.prototype = {
     },
 
     updateShape: function () {
+
         var segments = this.path.segments;
         for (var i = 0; i < this.numSegment; i++)
             segments[i].point = this.getSidePoint(i);

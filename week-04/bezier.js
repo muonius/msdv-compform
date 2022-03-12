@@ -4,10 +4,10 @@ function setup() {
 
 function draw() {
     background(255);
-    drawLip()
+    // drawLip()
     drawTear()
-    drawBrow(1)
-    drawBrow(100)
+    // drawBrow(1)
+    // drawBrow(100)
 }
 
 function drawBrow(xoff, angle) {

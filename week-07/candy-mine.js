@@ -116,14 +116,15 @@ Ball.prototype = {
 //--------------------- main ---------------------
 
 var balls = [];
-var numBalls = 300;
+var numBalls = 20;
+
 for (var i = 0; i < numBalls; i++) {
     var position = Point.random() * view.size;
     var vector = new Point({
         angle: 360 * Math.random(),
         length: Math.random() * 10 + 10
     });
-    var radius = Math.random() * 40 + 40;
+    var radius = Math.random() * 60 + 60;
     balls.push(new Ball(radius, position, vector));
 }
 
@@ -141,4 +142,25 @@ for (var i = 0; i < balls.length - 1; i++) {
 }
 for (var i = 0, l = balls.length; i < l; i++) {
     balls[i].iterate();
+}
+
+function onKeyDown(event) {
+    if (event.key === "s") {
+        downloadAsSVG();
+    }
+}
+
+function downloadAsSVG(fileName) {
+    // use default name if not provided
+    fileName = fileName || "output.svg";
+
+    // create a data url of the file
+    var svgData = project.exportSVG({ asString: true });
+    var url = "data:image/svg+xml;utf8," + encodeURIComponent(svgData);
+
+    // create a link to the data, and "click" it
+    var link = document.createElement("a");
+    link.download = fileName;
+    link.href = url;
+    link.click();
 }
