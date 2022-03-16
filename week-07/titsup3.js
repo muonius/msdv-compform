@@ -3,7 +3,7 @@ var words = project.importSVG(document.getElementById('svg'));
 words.visible = true; // Turn off the effect of display:none;
 var titsGroup = words.children.tits;
 var upGroup = words.children.up;
-console.log(words)
+// console.log(words)
 titsGroup.fillColor = null;
 // titsGroup.strokeColor = null;
 upGroup.fillColor = '#009dec';

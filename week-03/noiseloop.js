@@ -7,7 +7,7 @@ let noiseLoop = [];
 function setup() {
     createCanvas(600, 600);
     createNoiseLoop();
-    console.log(noiseLoop[1])
+    console.log(noiseLoop)
 }
 
 function draw() {
