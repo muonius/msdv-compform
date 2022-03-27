@@ -1,48 +1,45 @@
 // require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 // require /turtles/turtle/turtle.js
 
-let myTurtle;
+let t;
+let startX = 50;
+let startY = 250;
+let endX = 450;
+let endY = 50;
+
+let speed = 0;
 
 function setup() {
   createCanvas(500, 500);
   noFill();
-  stroke(255);
+
   background(50);
   noLoop();
-  myTurtle = new Turtle();
+  t = new Turtle();
 }
 
 function draw() {
-  myTurtle.penUp();
-  myTurtle.moveTo(250, 450);
-  myTurtle.turnTo(-70);
-  myTurtle.penDown();
-  drawBranch(100);
-}
+  let frequency = 5;
+  let amplitude = 2;
+  let time = 200 / 1000;
 
-function drawBranch(length) {
-  if (length < 0.5) {
-    return;
+  speed += time;
+
+  stroke(255);
+  t.penUp();
+  t.moveTo(250, 450);
+  t.penDown();
+
+  for (i = 0; i < 20; i += 0.2) {
+    let x = lerp(startX, endX, i);
+    let y = lerp(startY, endY, i);
+
+    // hint: drive offsetX and offsetY with noise() instead of random()
+    let offsetX = noise(i * frequency + speed) * amplitude * 100;
+    let offsetY = noise(i * frequency + speed, 100) * amplitude * 100;
+
+    t.moveTo(x + offsetX, y + offsetY);
+    t.moveForward(2);
+    t.turnRight(2);
   }
-
-  // draw this branch
-  strokeWeight(length / 10);
-  myTurtle.moveForward(length * 0.5);
-  myTurtle.turnLeft(10);
-  myTurtle.moveForward(length * 0.5);
-
-  // left child
-  myTurtle.pushState();
-  myTurtle.turnLeft(random(20, 40));
-  drawBranch(length * 0.75);
-  //drawBranch(length * random(.5, .9));
-
-  myTurtle.popState();
-
-  // right child
-  myTurtle.pushState();
-  myTurtle.turnRight(random(10, 30));
-  drawBranch(length * 0.75);
-  //drawBranch(length * random(.5, .9));
-  myTurtle.popState();
 }
