@@ -1,44 +1,31 @@
-let img;
-let particlesArray = [];
-const numberOfParticles = 5000;
+// require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
+// require /turtles/turtle/turtle.js
 
-function preload() {
-    img = loadImage("./assets/Olivier.png");
-    // img.resize(300,300)
-}
+let myTurtle;
 
 function setup() {
-    createCanvas(600, 600)
-    noLoop();
+  createCanvas(500, 500);
+  myTurtle = new Turtle();
 }
 
 function draw() {
+  background(50);
 
-    image(img, 0, 0, 600, 600);
-    for (let i = 0; i < img.width; i++) {
-        let c = img.get(i, img.height / 2);
-        stroke(c);
-        line(i, 0, width, height);
-        // line(i, 0, i - 4, height);
-    }
-}
+  noFill();
+  stroke(255, 255, 255, 180);
+  strokeWeight(2);
+  // move to starting position (without drawing)
+  myTurtle.penUp();
+  myTurtle.moveTo(100, 250);
 
+  // put the pen down to draw
+  myTurtle.penDown();
 
-function getQuick(img, x, y) {
-    const i = (y * img.width + x) * 4;
-    return [
-        img.pixels[i],
-        img.pixels[i + 1],
-        img.pixels[i + 2],
-        img.pixels[i + 3],
-    ];
-}
+  // draw the triangle
+  for (let i = 0; i < 72; i++) {
+    myTurtle.moveForward(300);
+    myTurtle.turnRight(175);
+  }
 
-function setQuick(img, x, y, c) {
-    const i = (y * img.width + x) * 4;
-
-    img.pixels[i + 0] = c[0];
-    img.pixels[i + 1] = c[1];
-    img.pixels[i + 2] = c[2];
-    img.pixels[i + 3] = c[3];
+  noLoop();
 }
