@@ -6,8 +6,8 @@ let t;
 function setup() {
   createCanvas(500, 500);
   noFill();
-  stroke(255);
-  background(50);
+  stroke("darkGreen");
+  background(255);
   noLoop();
   t = new Turtle();
 }
@@ -17,26 +17,44 @@ function draw() {
   t.moveTo(250, 450);
   t.turnTo(-90);
   t.penDown();
-  drawBranch(100);
+
+  for (let i = 0; i <= 10; i++) {
+    t.penUp();
+    t.moveTo(50 + i * 50, 450);
+    t.turnTo(-90);
+    t.penDown();
+    strokeWeight(2);
+    t.moveForward(random(50, 270));
+    strokeWeight(2);
+    drawBranch(100);
+    t.penUp();
+
+    // t.penDown();
+    // strokeWeight(4);
+
+    // strokeWeight(1);
+    // drawBranch(50);
+  }
 }
 
 function drawBranch(length) {
-  if (length < 10) {
+  if (length < 2) {
     return;
   }
-
   // draw this branch
-  t.moveForward(length);
+
+  t.moveForward(length * 0.5 + 0.1);
+  t.turnLeft(random(1, 10));
 
   // left child
   t.pushState();
-  t.turnLeft(35);
-  drawBranch(length * 0.75);
+  t.turnLeft(random(1, 30));
+  drawBranch(length * 0.5);
   t.popState();
 
   // right child
   t.pushState();
-  t.turnRight(65);
-  drawBranch(length * 0.75);
+  t.turnRight(random(1, 30));
+  drawBranch(length * 0.8);
   t.popState();
 }
