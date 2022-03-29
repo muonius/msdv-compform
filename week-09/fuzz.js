@@ -28,17 +28,15 @@ function draw() {
 
   noStroke();
   fill(0, 0, 0, 5);
-  fuzzy_ellipse(200, 200, 100, 100, 100);
+  fuzzy_ellipse(200, 250, 100, 100);
 
   params.frame_rate = frameRate();
 }
 
-function fuzzy_ellipse(x, y, w, h, fuzz = 100) {
+function fuzzy_ellipse(x, y, w, w) {
   for (let i = 0; i < 100; i++) {
-    const xx = random(-fuzz, fuzz);
-    const yy = random(-fuzz, fuzz);
-    //make it a circle looking fuzz
-    if (dist(0, 0, xx, yy) > fuzz) continue;
-    ellipse(x + xx, y + yy, w, h);
+    const offset = map(millis() % 2000, 0, 500, 100, 300);
+    const y = 200 - offset;
+    ellipse(x, y, w + offset, w + offset);
   }
 }
