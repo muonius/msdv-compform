@@ -25,7 +25,7 @@ function draw() {
   // const a = map(frameCount, 0, 20, 0, PI);
   //once per second
   const a = map(millis(), 0, 1000, 0, PI);
-  x = map(millis(), 0, 2000, 0, width);
+  x = map(millis() % 2000, 0, 2000, 0, width);
   let offset = sin(a) * 50;
   offset = abs(offset);
   const y = 200 - offset;
