@@ -1,15 +1,16 @@
 /* exported setup draw */
 /*ltner */
+// require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 
 function setup() {
   createCanvas(512 * 2, 512);
-
+  frameRate(30);
   background(0);
 }
 
 function draw() {
   for (let i = 0; i < 10; i++) {
-    drawTriangle(20 + i * 20, 156 + i * 20, 912 + i * 20, 0.2 + i * 0.1);
+    drawTriangle(20 + i * 20, 156 + i * 20, 912 + i * 20, 0.2 + i * 0.3);
   }
   drawText();
 }
@@ -58,13 +59,14 @@ function drawTriangle(scale, wdith, height, radius) {
 }
 
 function drawText() {
-  const a = map(frameCount, 0, 100, 0, PI / 3);
-  let offset = cos(a) * 100;
-  let size = 100 - offset;
-  stroke(255, 0, 0, 50);
-  strokeWeight(0.25);
+  const a = map(frameCount * 3, 0, 200, 0, PI);
+  let offset = cos(a) * 60;
+  let size = 70 - offset;
+  stroke(255, 0, 0, 60);
+  strokeWeight(0.5);
   noFill();
-  textFont("Helvetica");
+  textFont("Arial");
   textSize(size);
-  text("CompForm", sin(a) * 100, 306);
+  text("comp", 50 + sin(a) * 10, height / 2 + 50);
+  text("form", 700 + (1 - sin(a)) * 10, height / 2 + 50);
 }
