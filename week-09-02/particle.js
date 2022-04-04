@@ -4,7 +4,7 @@
 //play with density (mass)
 //time step variable engine.update delta
 
-function Particle(x, y, r) {
+function Particle(x, y, w, h) {
   this.hue = random(360);
   const options = {
     restitution: 0.3,
@@ -12,8 +12,9 @@ function Particle(x, y, r) {
     density: 0.01,
   };
   x += random(-1, 1);
-  this.body = Bodies.circle(x, y, r, options);
-  this.r = r;
+  this.body = Bodies.rectangle(x, y, w, h, options);
+  this.w = w;
+  this.h = h;
   this.body.label = "particle";
   World.add(world, this.body);
 }
@@ -25,7 +26,7 @@ Particle.prototype.show = function () {
   //translate is cumulative
   push();
   translate(pos.x, pos.y);
-  ellipse(0, 0, this.r * 2);
+  rect(0, 0, this.w, this.h);
   pop();
 };
 
