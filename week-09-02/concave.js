@@ -11,16 +11,21 @@ let Composite = Matter.Composite;
 let engine;
 let world;
 let particles = [];
-let boxA = Bodies.rectangle(400, 200, 80, 80);
-let boxB = Bodies.rectangle(450, 50, 80, 80);
-let ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+let letters = [];
+
+function preload() {
+  for (let i = 1; i <= 8; i++) {
+    letters.push(loadImage(`./assets/${i}.svg`));
+  }
+}
 
 function setup() {
-  createCanvas(600, 800);
+  createCanvas(600, 600);
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
   world.gravity.y = 1;
+  console.log(letters);
 }
 
 function draw() {
@@ -41,6 +46,6 @@ function draw() {
 }
 
 function newParticle() {
-  let p = new Particle(300, 0, 10, 10);
+  let p = new Particle(random(300), 0, 20, 20);
   particles.push(p);
 }
