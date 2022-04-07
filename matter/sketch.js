@@ -19,7 +19,7 @@ function setup() {
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
-
+  ground = new Box(250, height, width, 10, { isStatic: true });
   Runner.run(engine);
 }
 
@@ -33,7 +33,4 @@ function draw() {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].show();
   }
-  groud = Bodies.rectangle(250, height, width, 10);
-  // World.add(world, ground);
-  console.log(ground);
 }
