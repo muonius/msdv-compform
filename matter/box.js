@@ -1,4 +1,13 @@
-function Box(x, y, w, h, options) {
+function Box(x, y, w, h, optionReplace) {
+  let options = {};
+  if (optionReplace) {
+    options = optionReplace;
+  } else {
+    options = {
+      friction: 0.5,
+      restitution: 1,
+    };
+  }
   this.body = Bodies.rectangle(x, y, w, h, options);
   this.w = w;
   this.h = h;

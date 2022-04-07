@@ -19,7 +19,8 @@ function setup() {
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
-  ground = new Box(250, height, width, 10, { isStatic: true });
+  ground = new Box(250, height - 50, width, 100, { isStatic: true });
+  console.log(ground);
   Runner.run(engine);
 }
 
@@ -35,8 +36,9 @@ function draw() {
   }
   push();
   strokeWeight(4);
-  noStroke(255);
+  stroke(50);
   fill(150);
-  rect(0, 350, width, 50);
+  rectMode(CENTER);
+  rect(ground.body.position.x, ground.body.position.y, width, 100);
   pop();
 }
