@@ -12,28 +12,38 @@ let engine;
 let world;
 let particles = [];
 let letters = [];
+let bounds = [];
 
 function preload() {
+  let img;
   for (let i = 1; i <= 8; i++) {
-    letters.push(loadImage(`./assets/${i}.svg`));
+    img = loadImage(`./assets/${i}.svg`);
+    img.resize(random(50, 100), random(20, 50));
+    letters.push(img);
   }
+  console.log(letters);
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(500, 500);
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
-  world.gravity.y = 1;
+  world.gravity.y = 0.2;
+  frameRate(60);
   // console.log(letters);
+
+  //create outer bound
+  let b = new Boundary(width / 2, height, width, 50);
+  bounds.push(b);
 }
 
 function draw() {
-  background(50);
-  if (frameCount % 60 == 0) {
+  background(255);
+  if (frameCount % 120 == 0) {
     newParticle();
   }
-  Engine.update(engine, 10.66);
+  Engine.update(engine, 16.66);
   for (let i = 0; i < particles.length; i++) {
     particles[i].show();
     if (particles[i].isOffScreen()) {
@@ -46,8 +56,9 @@ function draw() {
 }
 
 function newParticle() {
-  for (let i = 0; i < letters.length; i++) {
-    let p = new Particle(random(300), 0, letters[i]);
+  for (let i = letters.length - 1; i >= 0; i--) {
+    const offset = 50;
+    let p = new Particle(50 + offset * i, 0, letters[i]);
     particles.push(p);
   }
 }
