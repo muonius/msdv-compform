@@ -14,7 +14,7 @@ function Particle(x, y, img) {
   // x += random(-1, 1);
   x = random(50, width - 50);
   y = random(0, 50);
-  this.body = Bodies.circle(x, y, 25, options);
+  this.body = Bodies.rectangle(x, y, 25, 25, options);
   this.body.label = "particle";
   this.img = img;
   World.add(world, this.body);
@@ -25,9 +25,12 @@ Particle.prototype.show = function () {
   fill(this.hue, 255, 255);
   stroke(140);
   let pos = this.body.position;
+  let angle = this.angle;
   push();
   //translate is cumulative
   translate(pos.x + offset, pos.y);
+  rectMode(CENTER);
+  rotate(angle);
   image(this.img, 0, 0, 60, 30);
   pop();
   offset += 60;

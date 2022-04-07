@@ -2,10 +2,11 @@ let Engine = Matter.Engine;
 let World = Matter.World;
 let Bodies = Matter.Bodies;
 let Events = Matter.Events;
-let Constraint = Matter.Constraint;
-let Mouse = Matter.Mouse;
-let MouseConstraint = Matter.MouseConstraint;
-let Common = Matter.Common;
+// let MouseConstraint = Matter.MouseConstraint;
+// let Mouse = Matter.Mouse;
+let Composite = Matter.Composite;
+// let Vertices = Matter.Vertices;
+// let Svg = Matter.Svg;
 
 let engine;
 let world;
@@ -14,8 +15,13 @@ let letters = [];
 let bounds = [];
 
 function preload() {
-  const comp = loadImage(`./assets/computational.svg`);
-  const form = loadImage(`./assets/form.svg`);
+  let img;
+  for (let i = 1; i <= 8; i++) {
+    img = loadImage(`./assets/${i}.svg`);
+    img.resize(random(50, 100), random(20, 50));
+    letters.push(img);
+  }
+  console.log(letters);
 }
 
 function setup() {
@@ -25,19 +31,35 @@ function setup() {
   world = engine.world;
   world.gravity.y = 0.2;
   frameRate(60);
+  // console.log(letters);
+
+  //create outer bound
   let b = new Boundary(width / 2, height, width, 50);
   bounds.push(b);
-
-  const boxA = Bodies.circle(150, 200, 70);
-  let boxAPos = boxA.body.position;
-  World.add(world, boxA);
 }
 
 function draw() {
   background(255);
+  if (frameCount % 120 == 0) {
+    newParticle();
+  }
+  Engine.update(engine, 16.66);
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].show();
+    if (particles[i].isOffScreen()) {
+      //remove the particle from the world as well
+      World.remove(world, particles[i].body);
+      particles.splice(i, 1);
+      i--;
+    }
+  }
+}
 
-  fill("#FF2C55");
-  push();
-  ellipse(boxAPos.x, boxAPos.y, 80);
-  pop();
+function newParticle() {
+  for (let i = letters.length - 1; i >= 0; i--) {
+    const offset = 50;
+    let p = new Particle(50 + offset * i, 0, letters[i]);
+    particles.push(p);
+    console.log(particles);
+  }
 }

@@ -12,6 +12,9 @@ function Box(x, y, w, h, options) {
     translate(pos.x, pos.y);
     rectMode(CENTER);
     rotate(angle);
+    strokeWeight(1);
+    stroke(255);
+    fill(127);
     rect(0, 0, this.w, this.h);
     pop();
   };

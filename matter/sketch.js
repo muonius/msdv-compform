@@ -33,4 +33,7 @@ function draw() {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].show();
   }
+  strokeWeight(4);
+  fill(255);
+  line(0, height, width, height);
 }
