@@ -14,6 +14,11 @@ let box1;
 let letters = [];
 let bounds = [];
 
+function preload() {
+  const comp = loadImage("./assets/computational.svg");
+  const form = loadImage("./assets/form.svg");
+}
+
 function setup() {
   createCanvas(500, 500);
   colorMode(HSB);
