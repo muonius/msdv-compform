@@ -25,7 +25,7 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   world.gravity.y = 1;
-  console.log(letters);
+  // console.log(letters);
 }
 
 function draw() {
@@ -46,6 +46,8 @@ function draw() {
 }
 
 function newParticle() {
-  let p = new Particle(random(300), 0, 20, 20);
-  particles.push(p);
+  for (let i = 0; i < letters.length; i++) {
+    let p = new Particle(random(300), 0, letters[i]);
+    particles.push(p);
+  }
 }
