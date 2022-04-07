@@ -1,17 +1,16 @@
-function Box(x, y, w, h, optionReplace) {
+function Circles(x, y, r, optionReplace) {
   let options = {};
   if (optionReplace) {
     options = optionReplace;
   } else {
     options = {
-      friction: 0.1,
+      friction: 0.3,
       restitution: 1,
     };
   }
-  this.body = Bodies.rectangle(x, y, w, h, options);
-  this.w = w;
-  this.h = h;
-  this.hue = color(random(210, 240), 100, 100);
+  this.body = Bodies.circle(x, y, r, options);
+  this.hue = color(random(0, 30), 100, 100);
+  this.r = r;
   World.add(world, this.body);
 
   this.show = function () {
@@ -22,10 +21,10 @@ function Box(x, y, w, h, optionReplace) {
     translate(pos.x, pos.y);
     rectMode(CENTER);
     rotate(angle);
-    // strokeWeight(5);
-    noStroke();
+    strokeWeight(1);
+    stroke(150);
     fill(this.hue);
-    rect(0, 0, this.w, this.h);
+    ellipse(0, 0, this.r);
     pop();
   };
 }

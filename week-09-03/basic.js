@@ -33,8 +33,8 @@ function setup() {
 
 function draw() {
   background(255);
-  const img1 = new Particle(200, 200, imgComp);
-  const img2 = new Box(100, 300, imgForm);
+  const img1 = new Particle(mouseX + 50, mouseY, imgComp);
+  const img2 = new Box(mouseX, mouseY, imgForm);
   img1.show();
   img2.show();
 }

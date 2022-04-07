@@ -24,7 +24,7 @@ function setup() {
   Runner.run(engine);
 }
 
-function mouseDragged() {
+function mousePressed() {
   boxes.push(new Box(mouseX, mouseY, random(10, 20), random(10, 30)));
 }
 
