@@ -33,7 +33,10 @@ function draw() {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].show();
   }
+  push();
   strokeWeight(4);
-  fill(255);
-  line(0, height, width, height);
+  noStroke(255);
+  fill(150);
+  rect(0, 350, width, 50);
+  pop();
 }

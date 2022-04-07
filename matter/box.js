@@ -13,8 +13,8 @@ function Box(x, y, w, h, options) {
     rectMode(CENTER);
     rotate(angle);
     strokeWeight(1);
-    stroke(255);
-    fill(127);
+    stroke(150);
+    fill("red");
     rect(0, 0, this.w, this.h);
     pop();
   };
