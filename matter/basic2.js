@@ -25,7 +25,7 @@ function setup() {
 }
 
 function mouseDragged() {
-  boxes.push(new Box(mouseX, mouseY, 20, 20));
+  boxes.push(new Box(mouseX, mouseY, random(10, 20), random(10, 30)));
 }
 
 function draw() {
