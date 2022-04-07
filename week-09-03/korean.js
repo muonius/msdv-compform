@@ -36,18 +36,19 @@ function preload() {
   imgForm = loadImage("./assets/form.svg");
 }
 // create two boxes and a ground
-let boxA = Bodies.circle(150, 200, 70, {
-  render: {
-    fillStyle: "#FF2C55",
-  },
-});
+// let boxA = Bodies.circle(150, 200, 70, {
+//   render: {
+//     fillStyle: "#FF2C55",
+//   },
+// });
 function setup() {
   createCanvas(600, 600);
 }
-// function draw() {
-//   let boxA = new Circle(150, 200, 70, imgComp);
-//   boxA.show();
-// }
+function draw() {
+  let boxA = new Circle(150, 200, 70, imgComp);
+  console.log(boxA);
+  boxA.show();
+}
 
 let boxB = Bodies.circle(150, 200, 30, {
   render: {
