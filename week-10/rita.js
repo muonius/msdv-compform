@@ -99,6 +99,7 @@ show(g.expand());
 function show(...strings) {
   for (let s of strings) {
     // console.log(s);
+
     const div = document.createElement("div");
     div.innerHTML = s;
     document.body.append(div);
