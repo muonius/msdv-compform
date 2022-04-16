@@ -8,6 +8,7 @@ title.innerHTML = 'Declaration of Independence "Alcatrazed"';
 document.body.append(title);
 
 const model = generateModel(alcatraz, declaration);
+
 const output_text = generateText(model);
 const bodyText = document.createElement("div");
 bodyText.innerHTML = output_text;
