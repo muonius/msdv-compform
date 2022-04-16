@@ -1,10 +1,9 @@
 let mySound;
 let fft;
 let speed = 0;
-let song;
 
 function preload() {
-  song = loadSound("rapgod.mp3");
+  mySound = loadSound("rapgod.mp3");
 }
 
 function setup() {
@@ -32,18 +31,18 @@ function stop() {
 function draw() {
   background(0);
   stroke(random(200), random(200), random(200));
-  // translate(random(width / 2), random(height));
+  translate(random(width / 2), random(height));
   strokeWeight(random(20));
   const data = fft.waveform();
   beginShape();
-  let i = 1;
-  let r = map(noise(i * abs(data[i])), 0, 1, 0, 200);
-  let color = map(noise(i * abs(data[i])), 0, 1, 0, 255);
-  const x = r * cos(noise(i * abs(data[i]), 0));
-  const y = r * sin(noise(i * abs(data[i]), 1));
-  // console.log(color);
-  // fill(random(255), random(255), random(255));
-  vertex(x, y);
-
+  for (let i = 0; i < 2; i += 1) {
+    let r = map(noise(i * abs(data[i])), 0, 1, 0, 200);
+    let color = map(noise(i * abs(data[i])), 0, 1, 0, 255);
+    const x = r * cos(noise(i));
+    const y = r * sin(noise(i));
+    // console.log(color);
+    // fill(random(255), random(255), random(255));
+    vertex(x, y);
+  }
   endShape(CLOSE);
 }
