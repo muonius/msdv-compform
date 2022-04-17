@@ -37,10 +37,10 @@ function draw() {
   translate(width / 2, height / 2);
   beginShape();
   for (let i = 1; i < 361; i++) {
-    let r2 = map(volHistory[i - 1], 0, 1, 10, 200);
-    let r1 = map(volHistory[i + 1], 0, 1, 40, width / 2);
-    let x = r1 * cos(i);
-    let y = r2 * sin(i);
+    let r2 = map(noise(volHistory[i - 1], 0), 0, 1, 10, 200);
+    let r1 = map(noise(volHistory[i + 1], 10), 0, 1, 40, width / 2);
+    let x = r1 * sin(i);
+    let y = r2 * cos(i);
     curveVertex(x, y);
   }
   endShape();
