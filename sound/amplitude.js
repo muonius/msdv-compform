@@ -1,16 +1,15 @@
 let song;
-let video;
 let playButton;
 let jumpButton;
 let pauseButton;
 let img;
 
 function setup() {
-  // createCanvas(300, 800);
+  createCanvas(300, 300);
   song = loadSound("rapgod.mp3", soundLoaded);
-  video = createVideo("instagram.mov", videoLoaded);
-  playButton = createButton("play");
-  playButton.mousePressed(togglePlaying);
+  amp = new p5.Amplitude();
+  //amp.getLevel() 0 - 1 volume value
+
   jumpButton = createButton("jump");
   jumpButton.mousePressed(jumpSong);
   pauseButton = createButton("pause");
@@ -25,11 +24,10 @@ function togglePlaying() {
 
 function soundLoaded() {
   console.log("sound loaded");
+  playButton = createButton("play");
+  playButton.mousePressed(togglePlaying);
 }
 
-function videoLoaded() {
-  console.log("video loaded");
-}
 function jumpSong() {
   let len = song.duration();
   song.jump(len / 2);
@@ -42,5 +40,9 @@ function pause() {
 }
 
 function draw() {
-  Image(video, 0, 0);
+  background(51);
+  let vol = amp.getLevel();
+  let diam = map(vol, 0, 0.5, 10, 200);
+  fill(255, 0, 50);
+  ellipse(width / 2, height / 2, diam, diam);
 }

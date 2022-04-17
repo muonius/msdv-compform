@@ -5,7 +5,7 @@ let pauseButton;
 let img;
 
 function setup() {
-  createCanvas(300, 800);
+  createCanvas(300, 300);
 
   song = loadSound("rapgod.mp3", soundLoaded);
   playButton = createButton("play");
