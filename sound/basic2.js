@@ -2,12 +2,12 @@ let song;
 let playButton;
 let jumpButton;
 let pauseButton;
+let img;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(300, 800);
 
-  song = loadSound("rapgod.mp3", loaded);
-
+  song = loadSound("rapgod.mp3", soundLoaded);
   playButton = createButton("play");
   playButton.mousePressed(togglePlaying);
   jumpButton = createButton("jump");
@@ -26,9 +26,10 @@ function togglePlaying() {
   }
 }
 
-function loaded() {
-  console.log("loaded");
+function soundLoaded() {
+  console.log("sound loaded");
 }
+
 function jumpSong() {
   let len = song.duration();
   song.jump(len / 2);
@@ -38,10 +39,6 @@ function jumpSong() {
 function pause() {
   song.pause();
 }
-
-// function draw() {
-//   // background(song.currentTime() * 10, 0, 255);
-// }
 
 function changeBackground() {
   background(random(255), random(255), random(255));
