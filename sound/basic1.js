@@ -7,7 +7,7 @@ let sliderPan;
 
 function setup() {
   createCanvas(300, 300);
-  mySound.setVolume(0.5);
+
   mySound = loadSound("rapgod.mp3", start);
   sliderRate = createSlider(0, 1, 0.5, 0.01);
   sliderPan = createSlider(-1, 1, 0.5, 0.01);
@@ -23,7 +23,10 @@ function setup() {
 }
 
 function start() {
-  mySound.play(0, 0.8, 1);
+  if (!mySound.isPlaying()) {
+    mySound.play(0, 0.8, 1);
+    mySound.setVolume(0.5);
+  }
 }
 
 function stop() {
@@ -32,6 +35,7 @@ function stop() {
 
 function draw() {
   background(0);
+
   //right to left speaker?
   mySound.pan(sliderPan.value());
   mySound.rate(sliderRate.value());
