@@ -18,7 +18,6 @@ function setup() {
 
 function togglePlaying() {
   song.play(0, 1, 1);
-  video.play();
   song.setVolume(0.5);
 }
 
