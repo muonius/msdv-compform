@@ -23,20 +23,30 @@ function setup() {
   world = engine.world;
   ground = new Box(250, height - 50, width, 100, { isStatic: true });
 
-  for (let x = 20; x < 380; x += 20) {
-    p = new Circles(x, 100, 10);
+  let prev = null;
+
+  for (let x = 200; x < 400; x += 40) {
+    let fixed = false;
+    if (!prev) {
+      fixed = true;
+    }
+    p = new Particle(x, 100, 20, fixed);
     particles.push(p);
+
+    if (prev) {
+      let options = {
+        bodyA: p.body,
+        bodyB: prev.body,
+        length: 40,
+        stiffness: 0.4,
+      };
+
+      let constraint = Constraint.create(options);
+      World.add(world, constraint);
+    }
+
+    prev = p;
   }
-
-  // let options = {
-  //   bodyA: p1.body,
-  //   bodyB: p2.body,
-  //   length: 50,
-  //   stiffness: 0.4,
-  // };
-
-  // let constraint = Constraint.create(options);
-  // World.add(world, constraint);
 
   Runner.run(engine);
 }
