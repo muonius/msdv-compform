@@ -13,8 +13,7 @@ let engine;
 let world;
 let boxes = [];
 let ground;
-let p1;
-let p2;
+let p;
 let particles = [];
 
 function setup() {
@@ -24,20 +23,20 @@ function setup() {
   world = engine.world;
   ground = new Box(250, height - 50, width, 100, { isStatic: true });
 
-  p1 = new Circles(200, 100, 10);
-  p2 = new Circles(200, 150, 10);
-  particles.push(p1);
-  particles.push(p2);
+  for (let x = 20; x < 380; x += 20) {
+    p = new Circles(x, 100, 10);
+    particles.push(p);
+  }
 
-  let options = {
-    bodyA: p1.body,
-    bodyB: p2.body,
-    length: 50,
-    stiffness: 0.4,
-  };
+  // let options = {
+  //   bodyA: p1.body,
+  //   bodyB: p2.body,
+  //   length: 50,
+  //   stiffness: 0.4,
+  // };
 
-  let constraint = Constraint.create(options);
-  World.add(world, constraint);
+  // let constraint = Constraint.create(options);
+  // World.add(world, constraint);
 
   Runner.run(engine);
 }
