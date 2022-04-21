@@ -13,6 +13,15 @@ function Circles(x, y, r, optionReplace) {
   this.r = r;
   World.add(world, this.body);
 
+  this.isOffScreen = function () {
+    let pos = this.body.position;
+    return pos.y > height + 100;
+  };
+
+  this.removeFromWorld = function () {
+    World.remove(world, this.body);
+  };
+
   this.show = function () {
     let pos = this.body.position;
     let angle = this.body.angle;
