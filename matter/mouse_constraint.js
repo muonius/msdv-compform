@@ -51,14 +51,14 @@ function setup() {
 
   let canvasMouse = Mouse.create(canvas.elt);
   canvasMouse.pixelRatio = pixelDensity();
-  console.log(canvasMouse);
+
   let optionsMouse = {
     mouse: canvasMouse,
   };
 
   mConstraint = MouseConstraint.create(engine, optionsMouse);
   World.add(world, mConstraint);
-
+  console.log(mConstraint);
   Runner.run(engine);
 }
 
@@ -77,6 +77,13 @@ function draw() {
   //note that the line is visible but has no physics properties
   line(lineX1, lineY1, lineX2, lineY2);
 
+  if (mConstraint.body) {
+    let pos = mConstraint.body.position;
+    let m = mConstraint.mouse.position;
+    let offset = mConstraint.constraint.pointB;
+    stroke(0, 255, 0);
+    line(pos.x + offset.x, pos.y + offset.y, m.x, m.y);
+  }
   push();
   strokeWeight(4);
   stroke(50);
