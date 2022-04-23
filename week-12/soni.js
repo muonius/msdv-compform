@@ -3,11 +3,9 @@ let data;
 let osc1;
 let osc2;
 let year;
-let freq;
-let headingEl;
-let tempEl;
+let temp1;
+let temp2;
 let playing;
-let music;
 
 function preload() {
   data = loadTable("weather.csv", "csv", "header");
@@ -20,7 +18,7 @@ function setup() {
   osc1 = new p5.Oscillator();
   osc2 = new p5.Oscillator();
   osc1.setType("sine");
-  osc2.setType("square");
+  osc2.setType("sine");
   osc1.amp(0);
   osc2.amp(0);
   button = createButton("play/pause");
@@ -29,17 +27,17 @@ function setup() {
 
 function draw() {
   background(50);
-  for (let i = 0; i < year.length; i++) {
-    x = map(i, 0, year.length, 5, width);
-    fill(255);
-    text(year[i], x, 250);
-    // console.log(year[i]);
-  }
-  playMusic(music);
+  push();
+  fill(255);
+  textSize(26);
+  text("convert data", width - 200, height - 10);
+  pop();
+  playMusic(temp1, temp2, year);
 }
 
 function start() {
-  osc.start();
+  osc1.start();
+  osc2.start();
 }
 
 function toggle() {
@@ -59,11 +57,20 @@ function toggle() {
   }
 }
 
-function playMusic(temp1, temp2, data) {
-  for (let i = 0; i < data.length; i++) {
-    let value1 = map(temp1[i], 1, 100, 10, 1000);
-    let value2 = map(temp2[i], 1, 200, 400, 1600);
+function playMusic(temp1, temp2, year) {
+  for (let i = 1; i < year.length; i++) {
+    let value1 = map(temp1[i], 1, 100, 10, 800);
+    let value2 = map(temp2[i], 1, 200, 300, 1200);
     osc1.freq(value1);
     osc2.freq(value2);
+
+    let height1 = map(temp1[i], 1, 100, 50, height * 0.8);
+    let height2 = map(temp2[i], 1, 200, 10, height);
+    let x = map(i, 0, year.length, 5, width);
+    fill(255);
+    text(year[i], x, height1);
+
+    ellipse(x, height2, 2, 2);
+    // console.log(year[i]);
   }
 }
