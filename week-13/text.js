@@ -30,20 +30,20 @@ function draw() {
   directionalLight(255, 255, 255, 1, 0, 1);
 
   rectMode(CENTER);
-  for (let x = -200; x < 200; x += 20) {
+  for (let x = -200; x < 200; x += 50) {
     push();
-    translate(x, 0, x - 200);
+    translate(x, 0, 200);
     rotateX(angle);
-    rotateY(angle * 1.3);
+    rotateY(angle * 0.3);
     rotateZ(angle * 0.7);
     noStroke();
     texture(love);
     box(100);
     pop();
-    angle += 0.01;
+    angle += 0.001;
   }
 
-  // translate(0, 100);
-  // rotateX(HALF_PI);
-  // fill(0);
+  translate(0, 100);
+  rotateX(HALF_PI);
+  fill(0);
 }
