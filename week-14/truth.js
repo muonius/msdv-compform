@@ -17,6 +17,12 @@ let x = 250;
 let y = 250;
 let walls;
 let distractors;
+let nemo;
+let nemo1;
+let nemo2;
+let puffer;
+let dad1;
+let dad2;
 
 function preload() {
   twitterImg = loadImage("./assets/twitter.png");
@@ -30,6 +36,12 @@ function preload() {
   truthsocialImg = loadImage("./assets/truth.png");
 
   instagramImg = loadImage("./assets/instagram.png");
+
+  nemo1 = loadImage("./assets/nemo1.png");
+  nemo2 = loadImage("./assets/nemo2.png");
+  pufferImg = loadImage("./assets/puffer.png");
+  dad1 = loadImage("./assets/dad1.png");
+  dad2 = loadImage("./assets/dad2.png");
 }
 
 function setup() {
@@ -40,6 +52,15 @@ function setup() {
   tiktokImg.resize(60, 60);
   truthsocialImg.resize(30, 30);
   instagramImg.resize(40, 40);
+
+  nemo = createSprite(50, 50, 150, 150);
+  nemo.addAnimation("normal", nemo1, nemo2, 2400);
+
+  puffer = createSprite(150, 150);
+  puffer.addImage(pufferImg);
+
+  dad = createSprite(450, 450, 150, 150);
+  dad.addImage(dad1);
 
   distractors = new Group();
 
@@ -100,6 +121,15 @@ function setup() {
 
 function draw() {
   background(0);
+  nemo.position.x = mouseX;
+  nemo.position.y = mouseY;
+
+  puffer.position.x = mouseX;
+  puffer.position.y = mouseY;
+
+  if (nemo.overlap(distractors)) {
+    nemo.displace(puffer);
+  }
   distractors.bounce(walls);
   for (let i = 0; i < distractors.length; i++) {
     distractors[i].bounce(distractors);
