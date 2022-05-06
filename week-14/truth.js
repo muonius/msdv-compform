@@ -53,11 +53,12 @@ function setup() {
   truthsocialImg.resize(30, 30);
   instagramImg.resize(40, 40);
 
-  nemo = createSprite(50, 50, 150, 150);
-  nemo.addAnimation("normal", nemo1, nemo2, 2400);
-
   puffer = createSprite(150, 150);
   puffer.addImage(pufferImg);
+  puffer.visible = false;
+
+  nemo = createSprite(50, 50, 150, 150);
+  nemo.addAnimation("normal", nemo1, nemo2, 2400);
 
   dad = createSprite(450, 450, 150, 150);
   dad.addImage(dad1);
@@ -128,7 +129,9 @@ function draw() {
   puffer.position.y = mouseY;
 
   if (nemo.overlap(distractors)) {
+    puffer.visible = true;
     nemo.displace(puffer);
+    nemo.visible = false;
   }
   distractors.bounce(walls);
   for (let i = 0; i < distractors.length; i++) {
