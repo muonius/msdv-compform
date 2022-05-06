@@ -1,4 +1,6 @@
-//https://www.youtube.com/watch?v=3tTZlTq4Cxs
+// require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
+// require /microgames/sketches/p5.play.js
+
 let twitter;
 let twitterImg;
 let facebook;
@@ -25,23 +27,43 @@ let dad1;
 let dad2;
 
 function preload() {
-  twitterImg = loadImage("./assets/twitter.png");
+  twitterImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/twitter.png"
+  );
 
-  facebookImg = loadImage("./assets/facebook.png");
+  facebookImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/facebook.png"
+  );
 
-  snapchatImg = loadImage("./assets/snapchat.png");
+  snapchatImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/snapchat.png"
+  );
 
-  tiktokImg = loadImage("./assets/tiktok.png");
+  tiktokImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/tiktok.png"
+  );
 
-  truthsocialImg = loadImage("./assets/truth.png");
+  truthsocialImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/truth.png"
+  );
 
-  instagramImg = loadImage("./assets/instagram.png");
+  instagramImg = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/instagram.png"
+  );
 
-  nemo1 = loadImage("./assets/nemo1.png");
-  nemo2 = loadImage("./assets/nemo2.png");
+  nemo1 = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/nemo1.png"
+  );
+  nemo2 = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/nemo2.png"
+  );
   pufferImg = loadImage("./assets/puffer.png");
-  dad1 = loadImage("./assets/dad1.png");
-  dad2 = loadImage("./assets/dad2.png");
+  dad1 = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/dad1.png"
+  );
+  dad2 = loadImage(
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/dad2.png"
+  );
 }
 
 function setup() {
@@ -57,7 +79,7 @@ function setup() {
   puffer.addImage(pufferImg);
   puffer.visible = false;
 
-  nemo = createSprite(50, 50, 150, 150);
+  nemo = createSprite(50, 50, 50, 50);
   nemo.addAnimation("normal", nemo1, nemo2, 2400);
 
   dad = createSprite(450, 450, 150, 150);
@@ -138,5 +160,9 @@ function draw() {
     distractors[i].bounce(distractors);
   }
   drawSprites();
+  fill(255);
+  textSize(22);
+  text("Return Nemo to Dad, Not Puffer", 50, 450);
+
   // console.log(distractors);
 }
