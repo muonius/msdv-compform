@@ -1,4 +1,4 @@
-//https://www.youtube.com/watch?v=3tTZlTq4Cxs
+// require https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js
 
 let globe;
 let total = 25;
