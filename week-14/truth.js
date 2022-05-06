@@ -27,43 +27,23 @@ let dad1;
 let dad2;
 
 function preload() {
-  twitterImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/twitter.png"
-  );
+  twitterImg = loadImage("./assets/twitter.png");
 
-  facebookImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/facebook.png"
-  );
+  facebookImg = loadImage("./assets/facebook.png");
 
-  snapchatImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/snapchat.png"
-  );
+  snapchatImg = loadImage("./assets/snapchat.png");
 
-  tiktokImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/tiktok.png"
-  );
+  tiktokImg = loadImage("./assets/tiktok.png");
 
-  truthsocialImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/truth.png"
-  );
+  truthsocialImg = loadImage("./assets/truth.png");
 
-  instagramImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/instagram.png"
-  );
+  instagramImg = loadImage("./assets/instagram.png");
 
-  nemo1 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/nemo1.png"
-  );
-  nemo2 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/nemo2.png"
-  );
+  nemo1 = loadImage("./assets/nemo1.png");
+  nemo2 = loadImage("./assets/nemo2.png");
   pufferImg = loadImage("./assets/puffer.png");
-  dad1 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/dad1.png"
-  );
-  dad2 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/dad2.png"
-  );
+  dad1 = loadImage("./assets/dad1.png");
+  dad2 = loadImage("./assets/dad2.png");
 }
 
 function setup() {
