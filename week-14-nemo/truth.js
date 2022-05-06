@@ -28,41 +28,41 @@ let dad2;
 
 function preload() {
   twitterImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/twitter.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/twitter.png"
   );
 
   facebookImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/facebook.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/facebook.png"
   );
 
   snapchatImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/snapchat.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/snapchat.png"
   );
 
   tiktokImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/tiktok.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/tiktok.png"
   );
 
   truthsocialImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/truth.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/truth.png"
   );
 
   instagramImg = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/instagram.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/instagram.png"
   );
 
   nemo1 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/nemo1.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/nemo1.png"
   );
   nemo2 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/nemo2.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/nemo2.png"
   );
   pufferImg = loadImage("./assets/puffer.png");
   dad1 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/dad1.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/dad1.png"
   );
   dad2 = loadImage(
-    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14/assets/dad2.png"
+    "https://raw.githubusercontent.com/muonius/msdv-compform/master/week-14-nemo/assets/dad2.png"
   );
 }
 
