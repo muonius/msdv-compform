@@ -1,13 +1,13 @@
 # Introduction
 
-This is the summary of my course study of Computational Form at Parsons' Data Visualization MS porgram in Spring 2022. This course is a life changer for me and as a two-time graduate student, I think I've earned the experience to say this is the best class I have ever taken in my life. This course is taught by Justin Bakse. He also created a "textbook" [site](https://compform.net/) to accompany the teaching.
+This is the summary of my course study of Computational Form at Parsons' Data Visualization MS porgram in Spring 2022. This course is a life changer for me and as a two-time graduate student, I think I've earned the experience to say this is the best class I have ever taken in my life. This course is taught by Justin Bakse. He also created a "textbook" [Comp Form](https://compform.net/) to accompany the teaching.
 
 I learned the following creative coding concepts and techniques:
 
-- Random
+- Random Value
 - Noise, Perlin Noise, Noise Loop
 - Parameterized Design, Tweakpine
-- Pixel Data
+- Pixel Data in Canvas
 - Drawing Using Periodic Functions (The Magical Sin & Cos)
 - Vector Drawing with Paper.js
 - Turtle Graphics and Recursive Trees
