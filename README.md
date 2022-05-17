@@ -2,7 +2,7 @@
 
 This is the summary of my course study of Computational Form at Parsons' Data Visualization MS porgram in Spring 2022. This course is a life changer for me and as a twice Mastered graduate student, I still think it is the best class I have ever taken in my life. This course is taught by Justin Bakse. He also created a "textbook" [site](https://compform.net/) to accompany the teaching.
 
-I learned the following creative coding concepts and techniques
+I learned the following creative coding concepts and techniques:
 
 - Random
 - Noise, Perlin Noise, Noise Loop
@@ -18,9 +18,9 @@ I learned the following creative coding concepts and techniques
 - Bezier Curves
 - Particle Systems (An Extension of p5.Vector or Physics Engine)
 
-## Some of My Favorite Sketches
-
 I fell in love with creative coding because of this course. I hope to continue this journey.
+
+### Some of My Favorite Sketches
 
 1. Splatter drawn using vector particle system
    <img src="./assets/sketch01.png" width="600" alt="Splatter">
