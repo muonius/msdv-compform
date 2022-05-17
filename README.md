@@ -23,22 +23,22 @@ I fell in love with creative coding because of this course. I hope to continue t
 ### Some of My Favorite Sketches
 
 1. Splatter drawn using vector particle system
-   <img src="./assets/sketch01.png" width="600" alt="Splatter">
+   <img src="./assets/sketch01.png" width="500" alt="Splatter">
 
 2. Mondrian in Space, again using vector particle system
-   <img src="./assets/sketch02.png" width="600" alt="Mondrian">
+   <img src="./assets/sketch02.png" width="500" alt="Mondrian">
 
 3. Antelope Abyss, using nested Perlin Noise Loops
-   <img src="./assets/sketch03.png" width="600" alt="Antelope Abyss">
+   <img src="./assets/sketch03.png" width="500" alt="Antelope Abyss">
 
 4. Pixel Map, love the gradient color palette
-   <img src="./assets/sketch04.png" width="600" alt="Pixel Map">
+   <img src="./assets/sketch04.png" width="500" alt="Pixel Map">
 
 5. Flower vector drawing in Paper.js
-   <img src="./assets/sketch05.png" width="600" alt="Flower">
+   <img src="./assets/sketch05.png" width="500" alt="Flower">
 
 6. Untitled, using periodic functions to draw abstract shapes in Paper.js
-   <img src="./assets/sketch06.png" width="600" alt="Geo Shape">
+   <img src="./assets/sketch06.png" width="500" alt="Geo Shape">
 
 7. Vector garden, using periodic functions to draw flowers in Paper.js
-   <img src="./assets/sketch07.png" width="600" alt="Garden">
+   <img src="./assets/sketch07.png" width="500" alt="Garden">
