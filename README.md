@@ -35,7 +35,7 @@ I fell in love with creative coding because of this course. I hope to continue t
    <img src="./assets/sketch04.png" width="500" alt="Pixel Map">
 
 5. Flower vector drawing in Paper.js using periodic functions
-   <img src="./assets/sketch05.png" width="400" alt="Flower">
+   <img src="./assets/sketch05.png" width="500" alt="Flower">
 
 6. Untitled, using periodic functions to draw abstract shapes in Paper.js
    <img src="./assets/sketch06.png" width="500" alt="Geo Shape">
