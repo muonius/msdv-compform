@@ -33,9 +33,9 @@ I fell in love with creative coding because of this course. I hope to continue t
 
 4. Pixel Map, love the gradient color palette
    <img src="./assets/sketch04.png" width="500" alt="Pixel Map">
-   <img src="./assets/sketch05.png" width="500" alt="Flower">
-5. Flower vector drawing in Paper.js
 
+5. Flower vector drawing in Paper.js
+   <img src="./assets/sketch05.png" width="500" alt="Flower">
 6. Untitled, using periodic functions to draw abstract shapes in Paper.js
    <img src="./assets/sketch06.png" width="500" alt="Geo Shape">
 
